@@ -15,17 +15,50 @@
         
         <div class="controls">
             <div class="filters">
-                <select id="nation-filter">
-                    <option value="">All Nations</option>
-                </select>
-                <input type="text" id="search" placeholder="Search startups, descriptions, investors...">
+                <!-- Multi-select for nations -->
+                <div class="filter-group">
+                    <label>Nations/Countries:</label>
+                    <div class="multi-select-wrapper">
+                        <button id="nation-select-btn" class="multi-select-button">
+                            Select Nations <span class="arrow">▼</span>
+                        </button>
+                        <div id="nation-dropdown" class="multi-select-dropdown hidden">
+                            <div class="dropdown-header">
+                                <button id="select-all-nations" class="btn-small">Select All</button>
+                                <button id="clear-all-nations" class="btn-small">Clear All</button>
+                            </div>
+                            <div id="nation-checkboxes" class="checkbox-list"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Date range filter -->
+                <div class="filter-group">
+                    <label>Date Range:</label>
+                    <div class="date-range">
+                        <input type="date" id="date-from" class="date-input">
+                        <span>to</span>
+                        <input type="date" id="date-to" class="date-input">
+                    </div>
+                </div>
+                
+                <!-- Search box -->
+                <div class="filter-group full-width">
+                    <label>Search:</label>
+                    <input type="text" id="search" placeholder="Search startups, descriptions, investors...">
+                </div>
+                
+                <!-- Reset filters button -->
+                <div class="filter-group">
+                    <button id="reset-filters" class="btn-reset">Reset All Filters</button>
+                </div>
             </div>
         </div>
         
         <div id="dashboard-content">
             <div id="stats-cards"></div>
             <div id="deals-container">
-                <h2>Recent Funding Deals</h2>
+                <h2>Recent Funding Deals (<span id="deal-count">0</span>)</h2>
                 <div id="deals-table"></div>
             </div>
         </div>
