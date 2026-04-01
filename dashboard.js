@@ -3,21 +3,32 @@ let allDeals = [];
 let nations = [];
 
 async function detectNationFiles() {
+    // Based on your data, you have Britain.json [1]
     const potentialNations = [
         'Britain', 'USA', 'China', 'Germany', 'France', 
-        'India', 'Canada', 'Australia', 'Japan', 'Singapore'
+        'India', 'Canada', 'Australia', 'Japan', 'Singapore',
+        'Israel', 'South Korea', 'Netherlands', 'Sweden', 'Switzerland'
     ];
     
     const availableNations = [];
     
     for (const nation of potentialNations) {
         try {
-            const response = await fetch(`${DATA_PATH}${nation}.json`);
+            const response = await fetch(`${DATA_PATH}${nation}.json`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            });
             if (response.ok) {
                 availableNations.push(nation);
+                console.log(`✅ Found: ${nation}.json`);
             }
         } catch (error) {
+            console.log(`❌ Not found: ${nation}.json`);
         }
+    }
+    
+    if (availableNations.length === 0) {
+        console.error('No data files found!');
     }
     
     return availableNations;
