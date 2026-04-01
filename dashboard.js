@@ -1,5 +1,5 @@
 // Configuration
-const DATA_PATH = './data/';
+const DATA_PATH = 'https://github.com/mohit-chhaparia/Global-VC-Intelligence-Dashboard/tree/main/data';
 let allDeals = [];
 let filteredDeals = [];
 let nations = [];
