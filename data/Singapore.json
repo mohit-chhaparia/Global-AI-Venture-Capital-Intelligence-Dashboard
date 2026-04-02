@@ -1,0 +1,37 @@
+{
+  "deals": [
+    {
+      "Country": "Singapore",
+      "Startup_Name": "Octen",
+      "Description": "San Francisco- and Singapore-based startup building search infrastructure for AI agents.",
+      "Amount": "US$10 million",
+      "Round": "Seed",
+      "Investors": "Square Peg, Argor, leading AI scientists",
+      "Founders": "Kuan Zou",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Singapore",
+      "Flag": "\ud83c\uddf8\ud83c\uddec",
+      "Date_Captured": "2026-04-01"
+    },
+    {
+      "Country": "Singapore",
+      "Startup_Name": "Plouton AI",
+      "Description": "Singapore-based AI-powered financial workflow automation.",
+      "Amount": "US$125,000",
+      "Round": "Seed",
+      "Investors": "Antler Singapore",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Singapore",
+      "Flag": "\ud83c\uddf8\ud83c\uddec",
+      "Date_Captured": "2026-04-01"
+    }
+  ],
+  "last_updated": "2026-04-02 06:13"
+}

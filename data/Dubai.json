@@ -1,0 +1,37 @@
+{
+  "deals": [
+    {
+      "Country": "UAE",
+      "Startup_Name": "Mal",
+      "Description": "An AI-native Islamic digital bank offering AI-powered financial features to simplify how users manage, move, and grow their money.",
+      "Amount": "230M USD",
+      "Round": "Seed",
+      "Investors": "BlueFive Capital",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Dubai",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-01"
+    },
+    {
+      "Country": "UAE",
+      "Startup_Name": "Mezza",
+      "Description": "A hospitality platform that provides capital to independent restaurants in exchange for future food and beverage credit, aimed at fueling restaurant expansion.",
+      "Amount": "Not disclosed",
+      "Round": "Seed",
+      "Investors": "Founders of PropertyFinder, Founders of Jellysmack",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Dubai",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-01"
+    }
+  ],
+  "last_updated": "2026-04-02 06:14"
+}
