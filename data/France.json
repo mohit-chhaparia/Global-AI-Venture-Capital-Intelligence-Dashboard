@@ -1,0 +1,53 @@
+{
+  "deals": [
+    {
+      "Country": "France",
+      "Startup_Name": "Mistral AI",
+      "Description": "An AI startup building open-source AI systems and infrastructure for training, fine-tuning, and deploying AI models, including a new data center in France.",
+      "Amount": "830,000,000",
+      "Round": "Debt",
+      "Investors": "Bpifrance, BNP Paribas, Cr\u00e9dit Agricole CIB, HSBC, La Banque Postale, MUFG, Natixis CIB",
+      "Founders": "Arthur Mensch, Guillaume Lample, Timoth\u00e9e Lacroix",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "France",
+      "Flag": "\ud83c\uddeb\ud83c\uddf7",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "France",
+      "Startup_Name": "Kestra",
+      "Description": "An open-source orchestration platform unifying data, AI, infrastructure, and business workflows, aiming to expand in North America and Europe.",
+      "Amount": "25,000,000",
+      "Round": "Series A",
+      "Investors": "RTP Global, Alven, ISAI, Axeleo",
+      "Founders": "Emmanuel Darras, Ludovic Dehon",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "France",
+      "Flag": "\ud83c\uddeb\ud83c\uddf7",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "France",
+      "Startup_Name": "OOrion",
+      "Description": "An AI-powered app that identifies objects and surroundings in real-time to enhance city accessibility for visually impaired individuals.",
+      "Amount": "1,080,000",
+      "Round": "Seed/Pre-Series A (implied)",
+      "Investors": "Unknown",
+      "Founders": "Thomas Brisson, St\u00e9phanie Robieux",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "France",
+      "Flag": "\ud83c\uddeb\ud83c\uddf7",
+      "Date_Captured": "2026-04-03"
+    }
+  ],
+  "last_updated": "2026-04-03 22:01"
+}

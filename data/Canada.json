@@ -255,7 +255,39 @@
       "Nation": "Canada",
       "Flag": "\ud83c\udde8\ud83c\udde6",
       "Date_Captured": "2026-04-02"
+    },
+    {
+      "Country": "Canada",
+      "Startup_Name": "Coral",
+      "Description": "A virtual clinic for midlife women, integrating hormonal health, metabolic wellness, and weight management. It uses advanced technology and AI capabilities to provide personalized, evidence-based roadmaps for menopause symptom management, weight loss, and health longevity.",
+      "Amount": "2.93M USD",
+      "Round": "Acceleration Round (Seed/Early Stage)",
+      "Investors": "Brightspark, Diagram, AQC Capital, Anges Quebec, The51, strategic group of angel investors",
+      "Founders": "Fiona Lake Waslander",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Canada",
+      "Flag": "\ud83c\udde8\ud83c\udde6",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "Canada",
+      "Startup_Name": "Sherweb",
+      "Description": "An award-winning cloud distributor and marketplace that provides value-added services to Managed Service Providers (MSPs). It enables MSPs to offload technical operations, deepen Microsoft cloud expertise, and scale efficiently.",
+      "Amount": "91.56M USD",
+      "Round": "Series C",
+      "Investors": "Investissement Qu\u00e9bec, Fonds pour la croissance des entreprises du Qu\u00e9bec (FCEQ)",
+      "Founders": "Peter Cassar, Matthew Cassar",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Canada",
+      "Flag": "\ud83c\udde8\ud83c\udde6",
+      "Date_Captured": "2026-04-03"
     }
   ],
-  "last_updated": "2026-04-02 21:43"
+  "last_updated": "2026-04-03 21:39"
 }

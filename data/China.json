@@ -1,0 +1,37 @@
+{
+  "deals": [
+    {
+      "Country": "China",
+      "Startup_Name": "Galaxea AI",
+      "Description": "A Chinese humanoid robot startup developing advanced robotics and AI solutions.",
+      "Amount": "291,000,000 USD",
+      "Round": "New Funding Round",
+      "Investors": "Unknown",
+      "Founders": "Unknown",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 2",
+      "Nation": "China",
+      "Flag": "\ud83c\udde8\ud83c\uddf3",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "China",
+      "Startup_Name": "NeoWa Robotics",
+      "Description": "A robotics startup focusing on 'last 500 meters' delivery scenarios with rigid demand.",
+      "Amount": "Unknown",
+      "Round": "Seed",
+      "Investors": "Unknown",
+      "Founders": "Yang Ruigang",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 2",
+      "Nation": "China",
+      "Flag": "\ud83c\udde8\ud83c\uddf3",
+      "Date_Captured": "2026-04-03"
+    }
+  ],
+  "last_updated": "2026-04-03 21:53"
+}

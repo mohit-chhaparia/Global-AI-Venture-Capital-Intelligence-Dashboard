@@ -31,7 +31,23 @@
       "Nation": "Dubai",
       "Flag": "\ud83c\udde6\ud83c\uddea",
       "Date_Captured": "2026-04-01"
+    },
+    {
+      "Country": "United Arab Emirates",
+      "Startup_Name": "zypl.ai",
+      "Description": "An AI company applying synthetic data for AI-driven decision-making in financial services, specializing in generative artificial intelligence for credit scoring and risk management. It offers Lucid, a no-code platform for building and deploying predictive AI solutions.",
+      "Amount": "$5.5 million",
+      "Round": "Bridge",
+      "Investors": "Carbide Ventures, Shukhrat Ibragimov, Prosus Ventures",
+      "Founders": "Azizjon Azimi",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Dubai",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-03"
     }
   ],
-  "last_updated": "2026-04-02 21:43"
+  "last_updated": "2026-04-03 21:39"
 }

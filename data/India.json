@@ -319,7 +319,39 @@
       "Nation": "India",
       "Flag": "\ud83c\uddee\ud83c\uddf3",
       "Date_Captured": "2026-04-02"
+    },
+    {
+      "Country": "India",
+      "Startup_Name": "Uncia Technologies",
+      "Description": "An AI-powered lending solutions provider offering cloud-first platforms for loan origination, management, and supply chain finance to banks and NBFCs.",
+      "Amount": "$3 million",
+      "Round": "Seed",
+      "Investors": "Pavestone VC",
+      "Founders": "Hari Padmanabhan (Chairman)",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "India",
+      "Flag": "\ud83c\uddee\ud83c\uddf3",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "USA",
+      "Startup_Name": "Noon",
+      "Description": "An AI-native tool designed to bridge the gap between product design and engineering. The company has a significant team in Bengaluru, India.",
+      "Amount": "$44 million",
+      "Round": "Seed/Series A (emerged from stealth)",
+      "Investors": "Chemistry, First Round Capital, Scribble Ventures, Elevation Capital, Afore Capital, individual investors",
+      "Founders": "Aditya Bandi, Kushagra Sinha",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "India",
+      "Flag": "\ud83c\uddee\ud83c\uddf3",
+      "Date_Captured": "2026-04-03"
     }
   ],
-  "last_updated": "2026-04-02 21:43"
+  "last_updated": "2026-04-03 21:39"
 }

@@ -1,0 +1,21 @@
+{
+  "deals": [
+    {
+      "Country": "Australia",
+      "Startup_Name": "Airwallex",
+      "Description": "A global payments and financial platform for modern businesses, offering services like business accounts, expense cards, payroll, and cross-border payments. The platform leverages data and AI for efficient financial operations.",
+      "Amount": "300000000",
+      "Round": "Series F (and Secondary)",
+      "Investors": "Square Peg, DST Global, Lone Pine Capital, Blackbird, Airtree, Salesforce Ventures, Visa Ventures, several leading pension funds in Australia",
+      "Founders": "Jack Zhang, Max Li, Lucy Liu, Xijing Dai, Ki-Lok Wong",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "Australia",
+      "Flag": "\ud83c\udde6\ud83c\uddfa",
+      "Date_Captured": "2026-04-03"
+    }
+  ],
+  "last_updated": "2026-04-03 22:01"
+}

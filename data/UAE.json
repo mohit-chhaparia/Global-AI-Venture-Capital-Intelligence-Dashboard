@@ -1,0 +1,53 @@
+{
+  "deals": [
+    {
+      "Country": "USA",
+      "Startup_Name": "OpenAI",
+      "Description": "Leading artificial intelligence research and deployment company, creator of ChatGPT, focused on developing advanced AI models and infrastructure.",
+      "Amount": "122 billion USD",
+      "Round": "Funding Round",
+      "Investors": "MGX, Insight Partners, Amazon, Nvidia, SoftBank, Microsoft, Andreessen Horowitz, D. E. Shaw Ventures, TPG, T. Rowe Price Associates, Altimeter, Appaloosa LP, ARK Invest, affiliated funds of BlackRock, Blackstone, Coatue, D1 Capital Partners, Dragoneer, Fidelity Management & Research Company, Goanna Capital, The Paragon Group, Sands Capital, Sequoia Capital, Sound Ventures, Temasek, Thrive Capital, UC Investments, Winslow Capital",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "UAE",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "USA",
+      "Startup_Name": "WHOOP",
+      "Description": "Human performance company providing wearable devices and an AI-powered coaching app to track health and fitness through biometric data, utilizing custom AI models for personalized advice.",
+      "Amount": "575 million USD",
+      "Round": "Series G",
+      "Investors": "2PointZero Group, Mubadala Investment Company, Collaborative Fund, Qatar Investment Authority (QIA), Abbott, Mayo Clinic, Macquarie Capital, Glade Brook, IVP, Foundry, Accomplice, Affinity Partners, Bullhound Capital, Cristiano Ronaldo, LeBron James, Rory McIlroy, Virgil van Dijk, Reggie Miller, Niall Horan, Karen Wazen, Shane Lowry",
+      "Founders": "Will Ahmed",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "UAE",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "UAE",
+      "Startup_Name": "NodeShift",
+      "Description": "Provider of a platform for deploying and managing artificial intelligence models and decentralized cloud computing services.",
+      "Amount": "Undisclosed",
+      "Round": "Seed",
+      "Investors": "Presight, and 1 more",
+      "Founders": "Mihai Marcuta, Andrey Surkov",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "UAE",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-03"
+    }
+  ],
+  "last_updated": "2026-04-03 22:01"
+}

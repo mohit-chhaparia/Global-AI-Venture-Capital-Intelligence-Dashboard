@@ -1,0 +1,21 @@
+{
+  "deals": [
+    {
+      "Country": "Denmark",
+      "Startup_Name": "Financial News Systems (FNS)",
+      "Description": "An AI-only financial newsroom that trains specialized AI models to extract news and data from financial press releases and regulatory filings, delivering it with zero latency to professional investors and analysts. It covers 9,000 companies from the US, Canada, and Europe.",
+      "Amount": "\u20ac1.5 million",
+      "Round": "Pre-Seed",
+      "Investors": "Ugly Duckling Ventures",
+      "Founders": "Gelu Sulugiuc, Nicolai Pedersen",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 5",
+      "Nation": "Denmark",
+      "Flag": "\ud83c\udde9\ud83c\uddf0",
+      "Date_Captured": "2026-04-03"
+    }
+  ],
+  "last_updated": "2026-04-03 22:57"
+}

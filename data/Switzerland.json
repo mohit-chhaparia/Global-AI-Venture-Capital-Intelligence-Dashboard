@@ -1,0 +1,53 @@
+{
+  "deals": [
+    {
+      "Country": "Switzerland",
+      "Startup_Name": "SolidWatts",
+      "Description": "SolidWatts develops solid-state Radio Frequency (RF) platforms for industrial process heating, offering a clean and efficient alternative to fossil fuel-based systems. Their technology enables the electrification of industrial processes across diverse applications.",
+      "Amount": "2000000 USD",
+      "Round": "Seed",
+      "Investors": "Evercurious VC, Kickfund, Axel Carbon Capital, Uni. Fund, Investing for Purpose, Loggerhead, ABB",
+      "Founders": "Dragos Dancila, Markus Aicheler",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "Switzerland",
+      "Flag": "\ud83c\udde8\ud83c\udded",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "Switzerland",
+      "Startup_Name": "Plair SA",
+      "Description": "Plair SA develops and commercializes advanced laser-based instruments for real-time microbial, allergen, and bioaerosol detection. Their systems increase efficiencies and automation in environmental monitoring for improved risk management.",
+      "Amount": "1100000 USD",
+      "Round": "Seed",
+      "Investors": "bioM\u00e9rieux, Venture Kick, Evercurious VC",
+      "Founders": "Unknown",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "https://www.plair.ch/careers",
+      "Tier": "Tier 3",
+      "Nation": "Switzerland",
+      "Flag": "\ud83c\udde8\ud83c\udded",
+      "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "Switzerland",
+      "Startup_Name": "PAVE Space",
+      "Description": "PAVE Space is a Swiss space infrastructure company developing orbital transfer vehicles (OTVs) to move satellites rapidly between orbits. Their technology aims to significantly reduce satellite deployment times and enhance in-space logistics.",
+      "Amount": "40000000 USD",
+      "Round": "Seed",
+      "Investors": "Visionaries Club, Creandum, Lombard Odier Investment Managers, Atlantic Labs, Sistafund, b2venture, ACE Investment Partners, Ilavska Vuillermoz Capital, Pareto Ventures, Motier Ventures",
+      "Founders": "Julie B\u00f6hning, J\u00e9r\u00e9my Marciacq",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "Switzerland",
+      "Flag": "\ud83c\udde8\ud83c\udded",
+      "Date_Captured": "2026-04-03"
+    }
+  ],
+  "last_updated": "2026-04-03 22:01"
+}
