@@ -1,4 +1,69 @@
 {
-  "deals": [],
-  "last_updated": "2026-04-03 22:56"
+  "deals": [
+    {
+      "Country": "Spain",
+      "Startup_Name": "Galtea",
+      "Description": "A Barcelona-based startup that develops AI agent testing solutions. It helps companies ensure their AI systems are safe, compliant, and trustworthy before deployment.",
+      "Amount": "3.2 million USD",
+      "Round": "Seed",
+      "Investors": "42CAP, Mozilla Ventures, JME Ventures, Masia, ABAC Nest Ventures",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 5",
+      "Nation": "Spain",
+      "Flag": "\ud83c\uddea\ud83c\uddf8",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Spain",
+      "Startup_Name": "Brickken",
+      "Description": "A Barcelona-based crypto startup offering an institutional tokenization platform. It enables financial institutions to digitize and manage real-world assets compliantly.",
+      "Amount": "3.24 million USD",
+      "Round": "Pre-Series A",
+      "Investors": "Dedagroup, GRX",
+      "Founders": "Edwin Mata",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 5",
+      "Nation": "Spain",
+      "Flag": "\ud83c\uddea\ud83c\uddf8",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Spain",
+      "Startup_Name": "Elingua",
+      "Description": "An Aragonese company specializing in digital language education. It is developing a new platform integrating AI and immersive experiences to enhance learning.",
+      "Amount": "Undisclosed",
+      "Round": "Debt",
+      "Investors": "Sodiar",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 5",
+      "Nation": "Spain",
+      "Flag": "\ud83c\uddea\ud83c\uddf8",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Spain",
+      "Startup_Name": "Axiomatic AI",
+      "Description": "A Spanish company focused on making artificial intelligence more reliable in engineering. It specializes in the verification of AI used in engineering applications.",
+      "Amount": "16.2 million USD",
+      "Round": "Undisclosed",
+      "Investors": "N/A",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 5",
+      "Nation": "Spain",
+      "Flag": "\ud83c\uddea\ud83c\uddf8",
+      "Date_Captured": "2026-04-04"
+    }
+  ],
+  "last_updated": "2026-04-04 01:10"
 }

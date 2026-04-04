@@ -63,7 +63,23 @@
       "Nation": "Finland",
       "Flag": "\ud83c\uddeb\ud83c\uddee",
       "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "Finland",
+      "Startup_Name": "Metaktik",
+      "Description": "Espoo-based deep-tech company, a spin-off from Aalto University, developing patented ultralight, flexible metasurface antennas for high-impact signal performance and coverage in aerospace, defense, and telecommunications.",
+      "Amount": "1,080,000 USD",
+      "Round": "Pre-seed",
+      "Investors": "Maki.vc, Business Finland, Aalto University",
+      "Founders": "Tuukka Kuuramaa",
+      "LinkedIn_Profile": "https://www.linkedin.com/search/results/people/?keywords=Tuukka%20Kuuramaa%20Metaktik",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 5",
+      "Nation": "Finland",
+      "Flag": "\ud83c\uddeb\ud83c\uddee",
+      "Date_Captured": "2026-04-04"
     }
   ],
-  "last_updated": "2026-04-03 22:57"
+  "last_updated": "2026-04-04 01:10"
 }
