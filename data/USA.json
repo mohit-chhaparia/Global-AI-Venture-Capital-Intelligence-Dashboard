@@ -975,7 +975,55 @@
       "Nation": "USA",
       "Flag": "\ud83c\uddfa\ud83c\uddf8",
       "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "USA",
+      "Startup_Name": "Saronic",
+      "Description": "Defense tech startup focused on autonomous sea vessels, leveraging AI for advanced capabilities.",
+      "Amount": "$1.75B",
+      "Round": "Series D",
+      "Investors": "Kleiner Perkins",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "USA",
+      "Flag": "\ud83c\uddfa\ud83c\uddf8",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "USA",
+      "Startup_Name": "Tenex.AI",
+      "Description": "AI-enabled cybersecurity startup. The company plans to use the funds to hire more than 250 people.",
+      "Amount": "$250M",
+      "Round": "Series B",
+      "Investors": "Crosspoint Capital Partners",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "USA",
+      "Flag": "\ud83c\uddfa\ud83c\uddf8",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "USA",
+      "Startup_Name": "ScaleOps",
+      "Description": "Cloud and AI infrastructure startup, focused on optimizing computing resource allocation.",
+      "Amount": "$130M",
+      "Round": "Series C",
+      "Investors": "Insight Partners, Lightspeed, NFX, Glilot Capital Partners, Picture Capital",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "USA",
+      "Flag": "\ud83c\uddfa\ud83c\uddf8",
+      "Date_Captured": "2026-04-04"
     }
   ],
-  "last_updated": "2026-04-04 06:01"
+  "last_updated": "2026-04-05 06:15"
 }

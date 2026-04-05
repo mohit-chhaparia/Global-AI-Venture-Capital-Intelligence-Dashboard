@@ -63,7 +63,23 @@
       "Nation": "Singapore",
       "Flag": "\ud83c\uddf8\ud83c\uddec",
       "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Singapore",
+      "Startup_Name": "ARO Network",
+      "Description": "Provider of an agentic edge network built natively for agentic AI services.",
+      "Amount": "5000000 USD",
+      "Round": "Strategic Funding",
+      "Investors": "Undisclosed",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Singapore",
+      "Flag": "\ud83c\uddf8\ud83c\uddec",
+      "Date_Captured": "2026-04-04"
     }
   ],
-  "last_updated": "2026-04-04 06:00"
+  "last_updated": "2026-04-05 06:15"
 }

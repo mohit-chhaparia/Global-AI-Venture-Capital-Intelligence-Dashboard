@@ -399,7 +399,39 @@
       "Nation": "Israel",
       "Flag": "\ud83c\uddee\ud83c\uddf1",
       "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Israel",
+      "Startup_Name": "Decart",
+      "Description": "Israeli AI startup focused on advanced artificial intelligence solutions.",
+      "Amount": "Several hundred million USD (Nvidia invested ~100M USD)",
+      "Round": "Undisclosed (part of a larger round)",
+      "Investors": "Nvidia, Radical Ventures",
+      "Founders": "Unknown",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 2",
+      "Nation": "Israel",
+      "Flag": "\ud83c\uddee\ud83c\uddf1",
+      "Date_Captured": "2026-04-05"
+    },
+    {
+      "Country": "Israel",
+      "Startup_Name": "Matia",
+      "Description": "Builds AI-friendly data infrastructure, targeting fragmentation in data infrastructure.",
+      "Amount": "21,000,000 USD",
+      "Round": "Series A",
+      "Investors": "Unknown",
+      "Founders": "Unknown",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 2",
+      "Nation": "Israel",
+      "Flag": "\ud83c\uddee\ud83c\uddf1",
+      "Date_Captured": "2026-04-05"
     }
   ],
-  "last_updated": "2026-04-04 06:14"
+  "last_updated": "2026-04-05 06:41"
 }

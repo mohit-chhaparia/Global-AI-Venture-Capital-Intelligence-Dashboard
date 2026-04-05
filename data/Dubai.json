@@ -47,7 +47,55 @@
       "Nation": "Dubai",
       "Flag": "\ud83c\udde6\ud83c\uddea",
       "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "UAE",
+      "Startup_Name": "ADGT",
+      "Description": "UAE-based payments and data intelligence platform.",
+      "Amount": "250,000,000 USD",
+      "Round": "Growth Investment",
+      "Investors": "Blackstone, Raya Holding",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Dubai",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Global",
+      "Startup_Name": "Advanced Machine Intelligence Labs (AMI Labs)",
+      "Description": "An artificial intelligence startup founded by AI researcher Yann LeCun.",
+      "Amount": "1,030,000,000 USD",
+      "Round": "Seed",
+      "Investors": "Shorooq (UAE-based), Cathay Innovation, Greycroft, Hiro Capital, HV Capital, Bezos Expeditions, Temasek, Nvidia, SBVA, Mark Cuban, Eric Schmidt, Xavier Niel",
+      "Founders": "Yann LeCun",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Dubai",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "United Arab Emirates",
+      "Startup_Name": "NodeShift",
+      "Description": "A sovereign AI company and decentralized cloud provider offering secure AI infrastructure and a platform for deploying and managing artificial intelligence models.",
+      "Amount": "Undisclosed (part of Presight-Shorooq Fund I, a $100M global AI innovation fund)",
+      "Round": "Strategic Investment / Accelerator Program Follow-on",
+      "Investors": "Presight\u2013Shorooq Fund I (Presight, Shorooq Partners)",
+      "Founders": "Mihai Marcuta, Andrey Surkov",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 1",
+      "Nation": "Dubai",
+      "Flag": "\ud83c\udde6\ud83c\uddea",
+      "Date_Captured": "2026-04-04"
     }
   ],
-  "last_updated": "2026-04-04 06:00"
+  "last_updated": "2026-04-05 06:15"
 }

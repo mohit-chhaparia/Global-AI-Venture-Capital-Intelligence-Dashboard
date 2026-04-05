@@ -15,7 +15,71 @@
       "Nation": "Netherlands",
       "Flag": "\ud83c\uddf3\ud83c\uddf1",
       "Date_Captured": "2026-04-03"
+    },
+    {
+      "Country": "Netherlands",
+      "Startup_Name": "Wonderful",
+      "Description": "Develops AI agent software for businesses to expand globally and boost enterprise AI adoption.",
+      "Amount": "139.64M USD",
+      "Round": "Series B",
+      "Investors": "Insight Partners, Bessemer Venture Partners, IVP, Index Ventures, Vine Ventures",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "Netherlands",
+      "Flag": "\ud83c\uddf3\ud83c\uddf1",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Netherlands",
+      "Startup_Name": "Reson8",
+      "Description": "Speech AI startup scaling its EU-focused speech recognition platform and expanding into professional sectors like healthcare, legal, and finance.",
+      "Amount": "5.4M USD",
+      "Round": "Pre-seed",
+      "Investors": "Balderton Capital",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "Netherlands",
+      "Flag": "\ud83c\uddf3\ud83c\uddf1",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Netherlands",
+      "Startup_Name": "Silverflow",
+      "Description": "Provides cloud-native payment processing infrastructure, expanding globally and enhancing its product suite.",
+      "Amount": "39.96M USD",
+      "Round": "Series B",
+      "Investors": "Picus Capital",
+      "Founders": "N/A",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Yes",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "Netherlands",
+      "Flag": "\ud83c\uddf3\ud83c\uddf1",
+      "Date_Captured": "2026-04-04"
+    },
+    {
+      "Country": "Netherlands",
+      "Startup_Name": "Brilliance",
+      "Description": "Develops integrated RGB laser chip technology to tackle AR hardware's key bottleneck, enabling next-generation Augmented Reality (AR) displays.",
+      "Amount": "6.48M USD",
+      "Round": "Growth Funding",
+      "Investors": "Cottonwood Technology Fund, PhotonVentures, Oost NL, PhotiX, other co-investors",
+      "Founders": "Tim Tiek",
+      "LinkedIn_Profile": "N/A",
+      "Hiring": "Unknown",
+      "Careers_Link": "N/A",
+      "Tier": "Tier 3",
+      "Nation": "Netherlands",
+      "Flag": "\ud83c\uddf3\ud83c\uddf1",
+      "Date_Captured": "2026-04-04"
     }
   ],
-  "last_updated": "2026-04-04 06:38"
+  "last_updated": "2026-04-05 07:08"
 }
