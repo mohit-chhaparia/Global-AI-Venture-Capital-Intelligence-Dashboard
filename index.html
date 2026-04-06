@@ -196,8 +196,8 @@
             <div id="deals-container">
                 <div class="deals-header">
                     <div>
-                        <h2>Recent Funding Deals (<span id="deal-count">0</span>)</h2>
-                        <p class="deals-subtitle">All raw deal fields are visible below, and every detected link opens in a new tab.</p>
+                        <h2>Last 7 Days (<span id="deal-count">0</span>)</h2>
+                        <p id="deals-subtitle" class="deals-subtitle">Showing deals from the last 7 days. Cards above reflect all filtered deals.</p>
                     </div>
                     <button id="export-csv" class="btn-csv-download">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -209,7 +209,7 @@
         </div>
 
         <footer>
-            <p>Data synced daily at 7:00 AM CT | Last sync: <span id="sync-time">Unknown</span></p>
+            <p>Data synced 3x daily (12 AM, 8 AM, 4 PM CT) | Last sync: <span id="sync-time">loading...</span></p>
         </footer>
     </div>
     
