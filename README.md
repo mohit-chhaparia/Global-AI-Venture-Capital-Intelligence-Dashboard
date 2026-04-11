@@ -115,13 +115,13 @@ Hiring and link coverage use qualified percentages to avoid misrepresentation:
 
 Rates are fetched from live market data during deployment and used to normalize non-USD deal amounts into USD-equivalent values for dashboard cards and filters.
 
-**Last Complete Update:** 2026-04-10 23:39 CT
+**Last Complete Update:** 2026-04-11 00:08 CT
 
 **Last Partial Update:** No partial update recorded
 
 **Source:** https://www.exchangerate-api.com
 
-The most recent pipeline run refreshed every nation in the FX table with fresh live-market values as follows:
+The most recent pipeline run refreshed every nation in the FX table with fresh live-market values.
 
 | Nation | Currency | USD per 1 unit of local currency |
 |--------|----------|----------------------------------|
