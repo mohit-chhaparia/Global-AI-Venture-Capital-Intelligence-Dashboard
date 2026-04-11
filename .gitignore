@@ -1,4 +1,6 @@
 data/*.json
+!data/fx_rates.json
+!data/outlier.json
 data/*.txt
 
 data/manifest.json
