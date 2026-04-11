@@ -1,7 +1,31 @@
 const MANIFEST_PATH = 'data/manifest.json';
 const LAST_UPDATED_PATH = 'data/last_updated.txt';
+const FX_RATES_PATH = 'data/fx_rates.json';
 const UNKNOWN_LABEL = 'Unknown';
 const AMOUNT_SLIDER_MAX = 1000;
+const MAX_REALISTIC_DEAL_AMOUNT = 250e9;
+const SYNC_TIME_ZONE = 'America/Chicago';
+const SYNC_TIME_ZONE_LABEL = 'CT';
+const FALLBACK_CURRENCY_TO_USD_RATE = {
+    USD: 1,
+    USDC: 1,
+    AED: 0.2723,
+    AUD: 0.66,
+    CAD: 0.74,
+    CNY: 0.138,
+    DKK: 0.145,
+    EUR: 1.09,
+    GBP: 1.28,
+    ILS: 0.27,
+    INR: 0.012,
+    JPY: 0.0067,
+    KRW: 0.00069,
+    RUB: 0.012,
+    SEK: 0.094,
+    SGD: 0.74,
+    TWD: 0.031,
+    ZAR: 0.053
+};
 const SEARCH_FIELDS = [
     'Country',
     'Nation',
@@ -198,6 +222,7 @@ let amountRange = {
 };
 let currentSort = { column: null, direction: 'asc' };
 let dashboardInitialized = false;
+let currencyToUsdRate = { ...FALLBACK_CURRENCY_TO_USD_RATE };
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Dashboard initializing...');
@@ -231,6 +256,7 @@ async function loadData() {
         showLoading(true);
 
         const manifest = await loadManifest();
+        await loadFxRates();
         const nationEntries = Array.isArray(manifest.nations) ? manifest.nations : [];
 
         if (nationEntries.length === 0) {
@@ -239,6 +265,7 @@ async function loadData() {
         }
 
         const loadedDeals = [];
+        const excludedDeals = [];
 
         for (const entry of nationEntries) {
             const nationName = cleanString(entry.name) || cleanString(entry.file).replace(/\.json$/i, '');
@@ -260,7 +287,14 @@ async function loadData() {
                 const deals = Array.isArray(data.deals) ? data.deals : [];
 
                 deals.forEach(deal => {
-                    loadedDeals.push(normalizeDeal(deal, nationName));
+                    const normalizedDeal = normalizeDeal(deal, nationName);
+
+                    if (normalizedDeal.ExcludedReason) {
+                        excludedDeals.push(normalizedDeal);
+                        return;
+                    }
+
+                    loadedDeals.push(normalizedDeal);
                 });
             } catch (error) {
                 console.error(`Failed to load ${filePath}:`, error);
@@ -270,6 +304,15 @@ async function loadData() {
         if (loadedDeals.length === 0) {
             showError('No deals found in the data files. Please check the JSON structure.');
             return;
+        }
+
+        if (excludedDeals.length) {
+            console.warn(`Excluded ${excludedDeals.length} implausible deal record(s) during load.`, excludedDeals.map(deal => ({
+                startup: deal.Startup_Name || 'Unknown',
+                nation: deal.Nation,
+                amount: deal.Amount,
+                reason: deal.ExcludedReason
+            })));
         }
 
         allDeals = loadedDeals;
@@ -303,10 +346,37 @@ async function loadManifest() {
     return response.json();
 }
 
+async function loadFxRates() {
+    try {
+        const response = await fetch(FX_RATES_PATH, { cache: 'no-store' });
+        if (!response.ok) {
+            return;
+        }
+
+        const payload = await response.json();
+        const nextRates = payload && typeof payload === 'object'
+            ? payload.currency_to_usd_rate
+            : null;
+
+        if (!nextRates || typeof nextRates !== 'object') {
+            return;
+        }
+
+        currencyToUsdRate = {
+            ...FALLBACK_CURRENCY_TO_USD_RATE,
+            ...nextRates
+        };
+    } catch (error) {
+        console.warn('Could not load live FX rates, using fallback rates.', error);
+    }
+}
+
 function normalizeDeal(deal, fallbackNation) {
     const nation = cleanString(deal.Nation) || cleanString(deal.Country) || fallbackNation;
     const country = cleanString(deal.Country) || nation;
     const capturedDate = cleanString(deal.Date_Captured) || cleanString(deal.Date);
+    const dateValue = parseDateValue(capturedDate);
+    const amountInfo = parseAmountInfo(deal.Amount);
 
     return {
         ...deal,
@@ -315,8 +385,17 @@ function normalizeDeal(deal, fallbackNation) {
         Flag: cleanString(deal.Flag) || getCountryFlag(nation),
         Date: capturedDate,
         Date_Captured: capturedDate,
-        DateValue: parseDateValue(capturedDate),
-        AmountValue: parseAmount(deal.Amount),
+        DateValue: dateValue,
+        AmountValue: amountInfo.usdValue,
+        AmountCurrency: amountInfo.currency,
+        AmountOriginalValue: amountInfo.originalValue,
+        AmountWasConverted: amountInfo.isConverted,
+        ExcludedReason: getDealExclusionReason({
+            Startup_Name: deal.Startup_Name,
+            Nation: nation,
+            DateValue: dateValue,
+            AmountValue: amountInfo.usdValue
+        }),
         RoundFilter: normalizeCategoryValue(deal.Round),
         TierFilter: normalizeTierValue(deal.Tier),
         LinkedInFilter: hasUsefulLinks(deal.LinkedIn_Profile) ? 'Present' : 'Missing',
@@ -1048,6 +1127,7 @@ function buildPeriodCard(definition, deals, referenceDate) {
                 <span class="period-pill">Top round: ${escapeHtml(metrics.topRound)}</span>
                 <span class="period-pill">${metrics.hiringLabel}</span>
                 <span class="period-pill">${metrics.linkLabel}</span>
+                <span class="period-pill">${metrics.amountKnownLabel}</span>
             </div>
         </article>
     `;
@@ -1056,6 +1136,7 @@ function buildPeriodCard(definition, deals, referenceDate) {
 function calculateMetrics(deals) {
     const total = deals.length;
     const dealsWithAmounts = deals.filter(deal => Number.isFinite(deal.AmountValue));
+    const convertedAmountCount = dealsWithAmounts.filter(deal => deal.AmountWasConverted).length;
     const totalFunding = dealsWithAmounts.reduce((sum, deal) => sum + deal.AmountValue, 0);
     const uniqueCountries = new Set(deals.map(deal => deal.Nation).filter(Boolean)).size;
     const avgDealSize = dealsWithAmounts.length > 0 ? totalFunding / dealsWithAmounts.length : 0;
@@ -1106,6 +1187,9 @@ function calculateMetrics(deals) {
         linkLabel = `${pctLinks}% known link coverage`;
     }
 
+    const amountKnownPct = total ? Math.round((dealsWithAmounts.length / total) * 100) : 0;
+    const amountKnownLabel = total ? `${amountKnownPct}% amounts known` : 'No amount data';
+
     return {
         totalDeals: total,
         totalFunding,
@@ -1123,7 +1207,10 @@ function calculateMetrics(deals) {
         topTierCount,
         linkedinPresent,
         careersPresent,
-        amountCoverageLabel: `${dealsWithAmounts.length}/${total || 0} with disclosed amounts`,
+        amountCoverageLabel: convertedAmountCount
+            ? `${dealsWithAmounts.length}/${total || 0} with USD-equivalent amounts (${convertedAmountCount} converted)`
+            : `${dealsWithAmounts.length}/${total || 0} with disclosed amounts`,
+        amountKnownLabel,
         hiringLabel,
         linkLabel,
         founderCoverageLabel: total ? `${founderCount}/${total} with founder names` : 'No founder data'
@@ -1198,7 +1285,7 @@ function renderTableCell(deal, column) {
         case 'Startup_Name':
             return `<td class="startup-cell${className}"><strong class="startup-name">${linkifyText(deal.Startup_Name || 'N/A')}</strong></td>`;
         case 'Amount':
-            return `<td class="amount-cell${className}"><strong>${escapeHtml(cleanString(deal.Amount) || 'N/A')}</strong></td>`;
+            return `<td class="amount-cell${className}"><strong>${escapeHtml(formatDealAmountForTable(deal))}</strong></td>`;
         case 'Hiring':
             return `<td class="${className.trim()}">${renderHiringCell(deal)}</td>`;
         case 'Tier':
@@ -1374,18 +1461,22 @@ async function updateLastUpdated(manifest) {
         }
     }
 
-    if (!lastUpdated && manifest.generated_at) {
-        const generatedDate = new Date(manifest.generated_at);
-        if (!isNaN(generatedDate.getTime())) {
-            lastUpdated = new Intl.DateTimeFormat('en-US', {
-                timeZone: 'America/Chicago',
-                year: 'numeric', month: 'short', day: 'numeric',
-                hour: 'numeric', minute: '2-digit', hour12: true
-            }).format(generatedDate) + ' CT';
-        }
+    const syncReferenceDate = getMostRecentDate([
+        parseSyncTimestamp(lastUpdated),
+        parseSyncTimestamp(manifest.generated_at)
+    ]);
+
+    let formattedLastUpdated = formatSyncTimestamp(syncReferenceDate);
+
+    if (!formattedLastUpdated) {
+        formattedLastUpdated = formatSyncTimestamp(lastUpdated);
     }
 
-    if (!lastUpdated) {
+    if (!formattedLastUpdated && manifest.generated_at) {
+        formattedLastUpdated = formatSyncTimestamp(manifest.generated_at);
+    }
+
+    if (!formattedLastUpdated) {
         return;
     }
 
@@ -1393,11 +1484,11 @@ async function updateLastUpdated(manifest) {
     const syncElem = document.getElementById('sync-time');
 
     if (lastUpdatedElem) {
-        lastUpdatedElem.textContent = `Last updated: ${lastUpdated}`;
+        lastUpdatedElem.textContent = `Last updated: ${formattedLastUpdated}`;
     }
 
     if (syncElem) {
-        syncElem.textContent = lastUpdated;
+        syncElem.textContent = formattedLastUpdated;
     }
 }
 
@@ -1420,6 +1511,15 @@ function formatAmountInputValue(num) {
     }
 
     return `$${formatLargeNumber(num)}`;
+}
+
+function formatDealAmountForTable(deal) {
+    if (Number.isFinite(deal.AmountOriginalValue)) {
+        const currency = cleanString(deal.AmountCurrency) || 'USD';
+        return `${currency} ${formatLargeNumber(deal.AmountOriginalValue)}`;
+    }
+
+    return cleanString(deal.Amount) || 'N/A';
 }
 
 function formatLargeNumber(num) {
@@ -1458,18 +1558,79 @@ function formatDateRange(startDate, endDate) {
 }
 
 function parseAmount(value) {
+    return parseAmountInfo(value).usdValue;
+}
+
+function parseAmountInfo(value) {
     const raw = cleanString(value);
     if (!raw) {
-        return null;
+        return {
+            usdValue: null,
+            currency: '',
+            originalValue: null,
+            isConverted: false
+        };
     }
 
     const normalized = raw.toLowerCase().replace(/,/g, '').trim();
 
     if (['unknown', 'undisclosed', 'not disclosed', 'n/a', 'na', '-', 'nil'].includes(normalized)) {
-        return null;
+        return {
+            usdValue: null,
+            currency: '',
+            originalValue: null,
+            isConverted: false
+        };
     }
 
+    const explicitUsdCandidates = [
+        ...matchAmountCandidates(raw, /(?:US\$|USD|\$)\s*\d[\d,]*(?:\.\d+)?(?:\s*(?:trillion|tn|billion|bn|million|mn|thousand|k|[tmb]))?/gi),
+        ...matchAmountCandidates(raw, /\d[\d,]*(?:\.\d+)?(?:\s*(?:trillion|tn|billion|bn|million|mn|thousand|k|[tmb]))?\s*(?:US\$|USD)/gi)
+    ];
+
+    for (const candidate of explicitUsdCandidates) {
+        const parsedCandidate = parseAmountCandidate(candidate);
+        if (Number.isFinite(parsedCandidate)) {
+            return {
+                usdValue: parsedCandidate,
+                currency: 'USD',
+                originalValue: parsedCandidate,
+                isConverted: false
+            };
+        }
+    }
+    const currency = detectAmountCurrency(raw);
+    const genericCandidates = matchAmountCandidates(raw, /\d[\d,]*(?:\.\d+)?(?:\s*(?:trillion|tn|billion|bn|million|mn|thousand|k|[tmb]))?/gi);
+
+    for (const candidate of genericCandidates) {
+        const parsedCandidate = parseAmountCandidate(candidate);
+        if (Number.isFinite(parsedCandidate)) {
+            const usdValue = convertAmountToUsd(parsedCandidate, currency || 'USD');
+            return {
+                usdValue,
+                currency: currency || 'USD',
+                originalValue: parsedCandidate,
+                isConverted: Boolean(currency && currency !== 'USD')
+            };
+        }
+    }
+
+    return {
+        usdValue: null,
+        currency,
+        originalValue: null,
+        isConverted: false
+    };
+}
+
+function matchAmountCandidates(value, pattern) {
+    return [...cleanString(value).matchAll(pattern)].map(match => match[0]);
+}
+
+function parseAmountCandidate(value) {
+    const normalized = cleanString(value).toLowerCase().replace(/,/g, '').trim();
     const numberMatch = normalized.match(/(\d+(?:\.\d+)?)/);
+
     if (!numberMatch) {
         return null;
     }
@@ -1479,7 +1640,9 @@ function parseAmount(value) {
         return null;
     }
 
-    if (/\bbillion\b/.test(normalized) || /\bbn\b/.test(normalized) || /(?<![a-z])b(?![a-z])/.test(normalized)) {
+    if (/\btrillion\b/.test(normalized) || /\btn\b/.test(normalized) || /(?<![a-z])t(?![a-z])/.test(normalized)) {
+        numericValue *= 1e12;
+    } else if (/\bbillion\b/.test(normalized) || /\bbn\b/.test(normalized) || /(?<![a-z])b(?![a-z])/.test(normalized)) {
         numericValue *= 1e9;
     } else if (/\bmillion\b/.test(normalized) || /\bmn\b/.test(normalized) || /(?<![a-z])m(?![a-z])/.test(normalized)) {
         numericValue *= 1e6;
@@ -1488,6 +1651,194 @@ function parseAmount(value) {
     }
 
     return numericValue;
+}
+
+function convertAmountToUsd(value, currency) {
+    const rate = currencyToUsdRate[currency] || null;
+
+    if (!Number.isFinite(value)) {
+        return null;
+    }
+
+    if (!currency || currency === 'USD') {
+        return value;
+    }
+
+    if (!Number.isFinite(rate)) {
+        return null;
+    }
+
+    return value * rate;
+}
+
+function detectAmountCurrency(value) {
+    const cleaned = cleanString(value).toUpperCase();
+
+    if (!cleaned) {
+        return '';
+    }
+
+    if (/(?:US\$|USD|\$)/.test(cleaned)) {
+        return 'USD';
+    }
+
+    const currencyMatchers = [
+        ['AED', /\bAED\b/],
+        ['AUD', /\bAUD\b/],
+        ['CAD', /\bCAD\b/],
+        ['CNY', /\bCNY\b/],
+        ['DKK', /\bDKK\b/],
+        ['EUR', /\bEUR\b|€/],
+        ['GBP', /\bGBP\b|£/],
+        ['ILS', /\bILS\b/],
+        ['INR', /\bINR\b|₹/],
+        ['JPY', /\bJPY\b|¥/],
+        ['KRW', /\bKRW\b|₩/],
+        ['SEK', /\bSEK\b/],
+        ['SGD', /\bSGD\b/],
+        ['USDC', /\bUSDC\b/],
+        ['ZAR', /\bZAR\b/]
+    ];
+
+    for (const [currency, matcher] of currencyMatchers) {
+        if (matcher.test(cleaned)) {
+            return currency;
+        }
+    }
+
+    return '';
+}
+
+function getDealExclusionReason(deal) {
+    if (Number.isFinite(deal.AmountValue) && deal.AmountValue > MAX_REALISTIC_DEAL_AMOUNT) {
+        return `Amount exceeds safety cap of ${formatCurrencyCompact(MAX_REALISTIC_DEAL_AMOUNT)}`;
+    }
+
+    return '';
+}
+
+function parseSyncTimestamp(value) {
+    const cleaned = cleanString(value);
+
+    if (!cleaned) {
+        return null;
+    }
+
+    const basicTimestampMatch = cleaned.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?$/);
+    if (basicTimestampMatch) {
+        const [, year, month, day, hour, minute, second = '00'] = basicTimestampMatch;
+        return createDateInTimeZone({
+            year: Number(year),
+            month: Number(month),
+            day: Number(day),
+            hour: Number(hour),
+            minute: Number(minute),
+            second: Number(second)
+        }, SYNC_TIME_ZONE) || new Date(Date.UTC(
+            Number(year),
+            Number(month) - 1,
+            Number(day),
+            Number(hour),
+            Number(minute),
+            Number(second)
+        ));
+    }
+
+    const parsed = new Date(cleaned);
+    return Number.isFinite(parsed.getTime()) ? parsed : null;
+}
+
+function formatSyncTimestamp(value) {
+    const parsed = value instanceof Date ? value : parseSyncTimestamp(value);
+
+    if (!parsed) {
+        return '';
+    }
+
+    const parts = new Intl.DateTimeFormat('en-CA', {
+        timeZone: SYNC_TIME_ZONE,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23'
+    }).formatToParts(parsed).reduce((acc, part) => {
+        acc[part.type] = part.value;
+        return acc;
+    }, {});
+
+    return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute} ${SYNC_TIME_ZONE_LABEL}`;
+}
+
+function createDateInTimeZone(parts, timeZone) {
+    const utcGuess = Date.UTC(
+        parts.year,
+        parts.month - 1,
+        parts.day,
+        parts.hour,
+        parts.minute,
+        parts.second || 0
+    );
+
+    let candidate = new Date(utcGuess - getTimeZoneOffsetMs(new Date(utcGuess), timeZone));
+
+    if (!matchesTimeZoneParts(candidate, parts, timeZone)) {
+        candidate = new Date(utcGuess - getTimeZoneOffsetMs(candidate, timeZone));
+    }
+
+    return Number.isFinite(candidate.getTime()) ? candidate : null;
+}
+
+function getTimeZoneOffsetMs(date, timeZone) {
+    const parts = getTimeZoneDateParts(date, timeZone);
+    const asUtc = Date.UTC(
+        Number(parts.year),
+        Number(parts.month) - 1,
+        Number(parts.day),
+        Number(parts.hour),
+        Number(parts.minute),
+        Number(parts.second)
+    );
+    return asUtc - date.getTime();
+}
+
+function getTimeZoneDateParts(date, timeZone) {
+    return new Intl.DateTimeFormat('en-CA', {
+        timeZone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hourCycle: 'h23'
+    }).formatToParts(date).reduce((acc, part) => {
+        acc[part.type] = part.value;
+        return acc;
+    }, {});
+}
+
+function matchesTimeZoneParts(date, expectedParts, timeZone) {
+    const actualParts = getTimeZoneDateParts(date, timeZone);
+    return (
+        Number(actualParts.year) === expectedParts.year &&
+        Number(actualParts.month) === expectedParts.month &&
+        Number(actualParts.day) === expectedParts.day &&
+        Number(actualParts.hour) === expectedParts.hour &&
+        Number(actualParts.minute) === expectedParts.minute &&
+        Number(actualParts.second) === (expectedParts.second || 0)
+    );
+}
+
+function getMostRecentDate(dates) {
+    const validDates = dates.filter(date => date instanceof Date && Number.isFinite(date.getTime()));
+
+    if (!validDates.length) {
+        return null;
+    }
+
+    return new Date(Math.max(...validDates.map(date => date.getTime())));
 }
 
 function parseDateValue(value) {
