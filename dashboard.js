@@ -426,7 +426,7 @@ async function loadData() {
         if (dedupedDeals.length < loadedDeals.length) {
             console.warn(
                 `Removed ${loadedDeals.length - dedupedDeals.length} duplicate deal record(s) ` +
-                '(same startup, nation, round, amount, and capture day—often from overlapping nation files).'
+                '(same org country, startup, amount, and capture week—e.g. same deal in USA.json and UAE.json where Nation is source file).'
             );
         }
         loadedDeals.length = 0;
@@ -691,35 +691,55 @@ function renderAnomalyAuditPanel() {
     `;
 }
 
+function captureWeekKeyForDedupe(deal) {
+    if (Number.isFinite(deal.DateValue)) {
+        return String(startOfUtcWeek(new Date(deal.DateValue)).getTime());
+    }
+    const raw = cleanString(deal.Date_Captured) || cleanString(deal.Date);
+    const parsed = raw.includes('T') ? Date.parse(raw) : Date.parse(`${raw.slice(0, 10)}T00:00:00Z`);
+    if (Number.isFinite(parsed)) {
+        return String(startOfUtcWeek(new Date(parsed)).getTime());
+    }
+    return `s:${raw.slice(0, 10)}`;
+}
+
 function buildDealDedupFingerprint(deal) {
+    const orgCountry = cleanString(deal.Country).toLowerCase() || cleanString(deal.Nation).toLowerCase();
     const startup = cleanString(deal.Startup_Name).toLowerCase();
-    const nation = cleanString(deal.Nation).toLowerCase();
-    const round = cleanString(deal.RoundFilter).toLowerCase();
     const amountKey = Number.isFinite(deal.AmountValue)
         ? `v:${deal.AmountValue}`
         : `a:${cleanString(deal.Amount).toLowerCase()}`;
-    let dayKey = '';
-    if (Number.isFinite(deal.DateValue)) {
-        dayKey = String(startOfUtcDay(new Date(deal.DateValue)).getTime());
-    } else {
-        const raw = cleanString(deal.Date_Captured) || cleanString(deal.Date);
-        dayKey = raw.slice(0, 10);
-    }
-    return `${nation}|${startup}|${round}|${amountKey}|${dayKey}`;
+    const weekKey = captureWeekKeyForDedupe(deal);
+    return `${orgCountry}|${startup}|${amountKey}|${weekKey}`;
+}
+
+function isNationMatchingOrgCountry(deal) {
+    const country = cleanString(deal.Country);
+    const nation = cleanString(deal.Nation);
+    return Boolean(country && nation && country === nation);
+}
+
+function pickPreferredDuplicateDeal(existing, incoming) {
+    const orgMatchA = isNationMatchingOrgCountry(existing);
+    const orgMatchB = isNationMatchingOrgCountry(incoming);
+    if (orgMatchB && !orgMatchA) return incoming;
+    if (orgMatchA && !orgMatchB) return existing;
+    const tA = Number.isFinite(existing.DateValue) ? existing.DateValue : 0;
+    const tB = Number.isFinite(incoming.DateValue) ? incoming.DateValue : 0;
+    return tB >= tA ? incoming : existing;
 }
 
 function dedupeDealsByFingerprint(deals) {
-    const seen = new Set();
-    const out = [];
+    const byFingerprint = new Map();
     deals.forEach(deal => {
         const fp = buildDealDedupFingerprint(deal);
-        if (seen.has(fp)) {
+        if (!byFingerprint.has(fp)) {
+            byFingerprint.set(fp, deal);
             return;
         }
-        seen.add(fp);
-        out.push(deal);
+        byFingerprint.set(fp, pickPreferredDuplicateDeal(byFingerprint.get(fp), deal));
     });
-    return out;
+    return [...byFingerprint.values()];
 }
 
 function normalizeDeal(deal, fallbackNation) {
