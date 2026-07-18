@@ -115,7 +115,7 @@ Hiring and link coverage use qualified percentages to avoid misrepresentation:
 
 Rates are fetched from live market data during deployment and used to normalize non-USD deal amounts into USD-equivalent values for dashboard cards and filters.
 
-**Last Complete Update:** 2026-07-17 19:53 CT
+**Last Complete Update:** 2026-07-18 04:08 CT
 
 **Last Partial Update:** No partial update recorded
 
@@ -125,29 +125,29 @@ The most recent pipeline run refreshed every nation in the FX table with fresh l
 
 | Nation | Currency | USD per 1 unit of local currency |
 |--------|----------|----------------------------------|
-| Australia | AUD | 0.69991594 |
-| Brazil | BRL | 0.19675322 |
-| Britain | GBP | 1.34867769 |
-| Canada | CAD | 0.71242222 |
-| China | CNY | 0.14748523 |
-| Denmark | DKK | 0.15344340 |
+| Australia | AUD | 0.69820652 |
+| Brazil | BRL | 0.19605921 |
+| Britain | GBP | 1.34438236 |
+| Canada | CAD | 0.71333341 |
+| China | CNY | 0.14739302 |
+| Denmark | DKK | 0.15321416 |
 | Dubai | AED | 0.27229408 |
-| Finland | EUR | 1.14484328 |
-| France | EUR | 1.14484328 |
-| Germany | EUR | 1.14484328 |
-| India | INR | 0.01037304 |
-| Ireland | EUR | 1.14484328 |
-| Israel | ILS | 0.33163558 |
-| Japan | JPY | 0.00616026 |
-| Luxembourg | EUR | 1.14484328 |
-| Netherlands | EUR | 1.14484328 |
-| Portugal | EUR | 1.14484328 |
-| Russia | RUB | 0.01285647 |
-| Singapore | SGD | 0.77517397 |
-| South Korea | KRW | 0.00067560 |
-| Spain | EUR | 1.14484328 |
-| Switzerland | CHF | 1.23722258 |
-| Taiwan | TWD | 0.03100978 |
+| Finland | EUR | 1.14357989 |
+| France | EUR | 1.14357989 |
+| Germany | EUR | 1.14357989 |
+| India | INR | 0.01037235 |
+| Ireland | EUR | 1.14357989 |
+| Israel | ILS | 0.32860158 |
+| Japan | JPY | 0.00615763 |
+| Luxembourg | EUR | 1.14357989 |
+| Netherlands | EUR | 1.14357989 |
+| Portugal | EUR | 1.14357989 |
+| Russia | RUB | 0.01283435 |
+| Singapore | SGD | 0.77438700 |
+| South Korea | KRW | 0.00067255 |
+| Spain | EUR | 1.14357989 |
+| Switzerland | CHF | 1.23849592 |
+| Taiwan | TWD | 0.03089900 |
 | UAE | AED | 0.27229408 |
 | USA | USD | 1.00000000 |
 
