@@ -1,7 +1,44 @@
 {
-  "updated_at": "2026-07-26T16:30:05+00:00",
+  "updated_at": "2026-07-27T01:07:10+00:00",
   "max_realistic_deal_amount_usd": 250000000000,
-  "record_count": 0,
-  "currently_detected_count": 0,
-  "records": []
+  "record_count": 2,
+  "currently_detected_count": 2,
+  "records": [
+    {
+      "id": "858388d2966720a717b06ca3510d2fc2793ab631945afa4a86b60f506c703a9b",
+      "nation": "Canada",
+      "startup_name": "Classwise",
+      "source_file": "Canada.json",
+      "amount": "Grant (part of $50,000 total)",
+      "amount_currency": "USD",
+      "original_amount_value": 5e+16,
+      "amount_was_converted": false,
+      "parsed_amount_usd": 5e+16,
+      "round": "Grant/Award (from accelerator)",
+      "date_captured": "2026-07-27",
+      "reason": "Amount exceeds safety cap of $250B",
+      "first_detected_at": "2026-07-27T01:07:10+00:00",
+      "last_detected_at": "2026-07-27T01:07:10+00:00",
+      "detection_count": 1,
+      "currently_detected": true
+    },
+    {
+      "id": "01c9645abc388c2125ac78d4dfd527270c6d413b410766cbaf77f46d1b7df7ef",
+      "nation": "Canada",
+      "startup_name": "Training Ground.ai",
+      "source_file": "Canada.json",
+      "amount": "Grant (part of $50,000 total)",
+      "amount_currency": "USD",
+      "original_amount_value": 5e+16,
+      "amount_was_converted": false,
+      "parsed_amount_usd": 5e+16,
+      "round": "Grant/Award (from accelerator)",
+      "date_captured": "2026-07-27",
+      "reason": "Amount exceeds safety cap of $250B",
+      "first_detected_at": "2026-07-27T01:07:10+00:00",
+      "last_detected_at": "2026-07-27T01:07:10+00:00",
+      "detection_count": 1,
+      "currently_detected": true
+    }
+  ]
 }
