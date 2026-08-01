@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-08-01T01:01:57+00:00",
+  "updated_at": "2026-08-01T09:31:52+00:00",
   "max_realistic_deal_amount_usd": 250000000000,
-  "record_count": 2,
-  "currently_detected_count": 2,
+  "record_count": 3,
+  "currently_detected_count": 3,
   "records": [
     {
       "id": "858388d2966720a717b06ca3510d2fc2793ab631945afa4a86b60f506c703a9b",
@@ -18,8 +18,8 @@
       "date_captured": "2026-07-27",
       "reason": "Amount exceeds safety cap of $250B",
       "first_detected_at": "2026-07-27T01:07:10+00:00",
-      "last_detected_at": "2026-08-01T01:01:57+00:00",
-      "detection_count": 16,
+      "last_detected_at": "2026-08-01T09:31:52+00:00",
+      "detection_count": 17,
       "currently_detected": true
     },
     {
@@ -36,8 +36,26 @@
       "date_captured": "2026-07-27",
       "reason": "Amount exceeds safety cap of $250B",
       "first_detected_at": "2026-07-27T01:07:10+00:00",
-      "last_detected_at": "2026-08-01T01:01:57+00:00",
-      "detection_count": 16,
+      "last_detected_at": "2026-08-01T09:31:52+00:00",
+      "detection_count": 17,
+      "currently_detected": true
+    },
+    {
+      "id": "781ea0e76d9efde701141882b659685ab909d916bf590383d75952925143a897",
+      "nation": "Japan",
+      "startup_name": "Seven & i Holdings Co. (Corporate Investment)",
+      "source_file": "Japan.json",
+      "amount": "300 billion yen",
+      "amount_currency": "USD",
+      "original_amount_value": 300000000000.0,
+      "amount_was_converted": false,
+      "parsed_amount_usd": 300000000000.0,
+      "round": "Capital injection",
+      "date_captured": "2026-08-01",
+      "reason": "Amount exceeds safety cap of $250B",
+      "first_detected_at": "2026-08-01T09:31:52+00:00",
+      "last_detected_at": "2026-08-01T09:31:52+00:00",
+      "detection_count": 1,
       "currently_detected": true
     }
   ]
