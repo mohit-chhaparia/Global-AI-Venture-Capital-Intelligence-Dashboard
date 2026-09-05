@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T17:10:57+00:00",
+  "updated_at": "2026-09-05T17:30:42+00:00",
   "max_realistic_deal_amount_usd": 250000000000,
   "record_count": 3,
   "currently_detected_count": 3,
@@ -18,8 +18,8 @@
       "date_captured": "2026-07-27",
       "reason": "Amount exceeds safety cap of $250B",
       "first_detected_at": "2026-07-27T01:07:10+00:00",
-      "last_detected_at": "2026-09-05T17:10:57+00:00",
-      "detection_count": 33,
+      "last_detected_at": "2026-09-05T17:30:42+00:00",
+      "detection_count": 34,
       "currently_detected": true
     },
     {
@@ -36,8 +36,8 @@
       "date_captured": "2026-07-27",
       "reason": "Amount exceeds safety cap of $250B",
       "first_detected_at": "2026-07-27T01:07:10+00:00",
-      "last_detected_at": "2026-09-05T17:10:57+00:00",
-      "detection_count": 33,
+      "last_detected_at": "2026-09-05T17:30:42+00:00",
+      "detection_count": 34,
       "currently_detected": true
     },
     {
@@ -54,8 +54,8 @@
       "date_captured": "2026-08-01",
       "reason": "Amount exceeds safety cap of $250B",
       "first_detected_at": "2026-08-01T09:31:52+00:00",
-      "last_detected_at": "2026-09-05T17:10:57+00:00",
-      "detection_count": 17,
+      "last_detected_at": "2026-09-05T17:30:42+00:00",
+      "detection_count": 18,
       "currently_detected": true
     }
   ]
