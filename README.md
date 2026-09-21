@@ -115,7 +115,7 @@ Hiring and link coverage use qualified percentages to avoid misrepresentation:
 
 Rates are fetched from live market data during deployment and used to normalize non-USD deal amounts into USD-equivalent values for dashboard cards and filters.
 
-**Last Complete Update:** 2026-09-21 09:26 CT
+**Last Complete Update:** 2026-09-21 15:06 CT
 
 **Last Partial Update:** No partial update recorded
 
