@@ -115,7 +115,7 @@ Hiring and link coverage use qualified percentages to avoid misrepresentation:
 
 Rates are fetched from live market data during deployment and used to normalize non-USD deal amounts into USD-equivalent values for dashboard cards and filters.
 
-**Last Complete Update:** 2026-10-19 15:40 CT
+**Last Complete Update:** 2026-10-19 20:58 CT
 
 **Last Partial Update:** No partial update recorded
 
@@ -125,29 +125,29 @@ The most recent pipeline run refreshed every nation in the FX table with fresh l
 
 | Nation | Currency | USD per 1 unit of local currency |
 |--------|----------|----------------------------------|
-| Australia | AUD | 0.69647050 |
-| Brazil | BRL | 0.19713978 |
-| Britain | GBP | 1.33278956 |
-| Canada | CAD | 0.70762895 |
-| China | CNY | 0.14941564 |
-| Denmark | DKK | 0.15042177 |
+| Australia | AUD | 0.69805738 |
+| Brazil | BRL | 0.19802898 |
+| Britain | GBP | 1.33139482 |
+| Canada | CAD | 0.70923797 |
+| China | CNY | 0.14939508 |
+| Denmark | DKK | 0.15008266 |
 | Dubai | AED | 0.27229408 |
-| Finland | EUR | 1.12250957 |
-| France | EUR | 1.12250957 |
-| Germany | EUR | 1.12250957 |
-| India | INR | 0.01050587 |
-| Ireland | EUR | 1.12250957 |
-| Israel | ILS | 0.32162697 |
-| Japan | JPY | 0.00633267 |
-| Luxembourg | EUR | 1.12250957 |
-| Netherlands | EUR | 1.12250957 |
-| Portugal | EUR | 1.12250957 |
-| Russia | RUB | 0.01201805 |
-| Singapore | SGD | 0.78158217 |
-| South Korea | KRW | 0.00074985 |
-| Spain | EUR | 1.12250957 |
-| Switzerland | CHF | 1.21316085 |
-| Taiwan | TWD | 0.03082022 |
+| Finland | EUR | 1.12173393 |
+| France | EUR | 1.12173393 |
+| Germany | EUR | 1.12173393 |
+| India | INR | 0.01052050 |
+| Ireland | EUR | 1.12173393 |
+| Israel | ILS | 0.32215810 |
+| Japan | JPY | 0.00631148 |
+| Luxembourg | EUR | 1.12173393 |
+| Netherlands | EUR | 1.12173393 |
+| Portugal | EUR | 1.12173393 |
+| Russia | RUB | 0.01207991 |
+| Singapore | SGD | 0.78137881 |
+| South Korea | KRW | 0.00075143 |
+| Spain | EUR | 1.12173393 |
+| Switzerland | CHF | 1.21003555 |
+| Taiwan | TWD | 0.03077714 |
 | UAE | AED | 0.27229408 |
 | USA | USD | 1.00000000 |
 
