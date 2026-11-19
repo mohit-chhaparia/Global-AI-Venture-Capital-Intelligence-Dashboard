@@ -115,7 +115,7 @@ Hiring and link coverage use qualified percentages to avoid misrepresentation:
 
 Rates are fetched from live market data during deployment and used to normalize non-USD deal amounts into USD-equivalent values for dashboard cards and filters.
 
-**Last Complete Update:** 2026-11-18 16:40 CT
+**Last Complete Update:** 2026-11-18 22:21 CT
 
 **Last Partial Update:** No partial update recorded
 
@@ -125,29 +125,29 @@ The most recent pipeline run refreshed every nation in the FX table with fresh l
 
 | Nation | Currency | USD per 1 unit of local currency |
 |--------|----------|----------------------------------|
-| Australia | AUD | 0.67369102 |
-| Brazil | BRL | 0.17295948 |
-| Britain | GBP | 1.31996473 |
-| Canada | CAD | 0.69959081 |
-| China | CNY | 0.14970367 |
-| Denmark | DKK | 0.14704963 |
+| Australia | AUD | 0.67185969 |
+| Brazil | BRL | 0.17212169 |
+| Britain | GBP | 1.31576004 |
+| Canada | CAD | 0.69824601 |
+| China | CNY | 0.14968317 |
+| Denmark | DKK | 0.14672838 |
 | Dubai | AED | 0.27229408 |
-| Finland | EUR | 1.09984987 |
-| France | EUR | 1.09984987 |
-| Germany | EUR | 1.09984987 |
+| Finland | EUR | 1.09739008 |
+| France | EUR | 1.09739008 |
+| Germany | EUR | 1.09739008 |
 | India | INR | 0.01069364 |
-| Ireland | EUR | 1.09984987 |
-| Israel | ILS | 0.30798067 |
-| Japan | JPY | 0.00627380 |
-| Luxembourg | EUR | 1.09984987 |
-| Netherlands | EUR | 1.09984987 |
-| Portugal | EUR | 1.09984987 |
-| Russia | RUB | 0.01214422 |
-| Singapore | SGD | 0.77609142 |
-| South Korea | KRW | 0.00074886 |
-| Spain | EUR | 1.09984987 |
-| Switzerland | CHF | 1.18946797 |
-| Taiwan | TWD | 0.03033301 |
+| Ireland | EUR | 1.09739008 |
+| Israel | ILS | 0.30577084 |
+| Japan | JPY | 0.00627507 |
+| Luxembourg | EUR | 1.09739008 |
+| Netherlands | EUR | 1.09739008 |
+| Portugal | EUR | 1.09739008 |
+| Russia | RUB | 0.01214409 |
+| Singapore | SGD | 0.77558219 |
+| South Korea | KRW | 0.00075063 |
+| Spain | EUR | 1.09739008 |
+| Switzerland | CHF | 1.18617489 |
+| Taiwan | TWD | 0.03032767 |
 | UAE | AED | 0.27229408 |
 | USA | USD | 1.00000000 |
 
